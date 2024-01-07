@@ -2,7 +2,7 @@
 
 
 
-Element1D::Element1D(int id, float start, float end, int quadpoints, int elemorder = 1)
+Element1D::Element1D(int id, float start, float end, int quadpoints, int elemorder)
 {
     this->id = id;
     this->lside = start;

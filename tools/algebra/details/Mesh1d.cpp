@@ -8,6 +8,7 @@ Mesh1d::Mesh1d()
     this->n = 10;
     this->start = 0.0;
     this->end = 1.0;
+    this->mesh = new float[n];
 }
 
 Mesh1d::Mesh1d(float start, float end, int n)
@@ -15,6 +16,7 @@ Mesh1d::Mesh1d(float start, float end, int n)
     this->n = n;
     this->start = start;
     this->end = end;
+    this->mesh = new float[n];
 }
 
 void Mesh1d::mesh_info()

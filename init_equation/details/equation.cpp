@@ -41,7 +41,7 @@ void Equation::initialization(bool leftboundary, bool rightboundary, float ua, f
 void Equation::bvp_fill()
 {
     // matrix first row filling
-    if(leftboundary)
+    if(!leftboundary)
     {
         bvp[0][0] = 1;
         bvp[0][2] = ua;
@@ -54,7 +54,7 @@ void Equation::bvp_fill()
     }
 
     // matrix second row filling
-    if(rightboundary)
+    if(!rightboundary)
     {
         bvp[1][0] = 1;
         bvp[1][2] = ub;

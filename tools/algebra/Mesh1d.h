@@ -7,7 +7,7 @@ public:
     int n; //number of mesh points
     float start;
     float end;
-    float* mesh = new float[n];
+    float* mesh;
 
 public:
     Mesh1d();

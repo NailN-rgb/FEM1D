@@ -12,7 +12,7 @@ public:
     int n; //number of mesh points
     float start;
     float end;
-    float * mesh = new float;
+    float * mesh;
     float h; //step of the mesh
 
 public:

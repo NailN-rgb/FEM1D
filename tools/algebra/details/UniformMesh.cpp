@@ -9,6 +9,9 @@ UniformMesh::UniformMesh()
     this->start = 0.0;
     this->end = 1.0;
     this->h =  0.1;
+    this->mesh = new float[n];
+    mesh_calculate();
+
 }
 
 //Classic Constructor
@@ -18,6 +21,8 @@ UniformMesh::UniformMesh(float start, float end, int n)
     this->start = start;
     this->end = end;
     this->h = (end - start) / n;
+    this->mesh = new float[n];
+    mesh_calculate();
 }
 
 
