@@ -11,13 +11,14 @@ class FEM
     std::vector<std::vector<float>> K_local; // local stiffness matrix 
     std::vector<float> F_local; // local power vector
 
-
-
-public:
     std::vector<std::vector<float>> K; // global stiffness matrix
     std::vector<float> F; // global power vector
 
+    std::vector<std::vector<float>> bvp;
 
+    float *solution;
+
+public:
     FEM();
 
     FEM(Equation eq, UniformMesh mesh, int elem_order = 1, int quad = 1);
@@ -30,8 +31,10 @@ public:
 
     void boundary_conditions();
 
-    void results_write();
-    
+    void solve();
+
+    void results_write(bool write);
+
 
     // testing methods 
 

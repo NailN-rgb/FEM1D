@@ -19,6 +19,8 @@ set(FDM_SOURCES
         ${PROJECT_SOURCE_DIR}/assembling/details/fe_method.cpp
         ${PROJECT_SOURCE_DIR}/assembling/details/local_power.cpp
         ${PROJECT_SOURCE_DIR}/assembling/details/local_stiffness.cpp
+        ${PROJECT_SOURCE_DIR}/assembling/details/write_res.cpp
+
         )
 
 add_executable(FEM1D ${FDM_SOURCES})

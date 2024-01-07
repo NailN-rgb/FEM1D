@@ -6,6 +6,7 @@ FEM::FEM(Equation eq, UniformMesh mesh, int elem_order, int quad)
     this->mesh = mesh;
     this->elements_order = elem_order;
     this->quad = quad;
+    this->solution = new float[mesh.n];
 
     int dof = 2 * elements_order;
 
@@ -14,12 +15,13 @@ FEM::FEM(Equation eq, UniformMesh mesh, int elem_order, int quad)
 
     F_local.resize(dof, 0);
     F.resize(mesh.n, 0);
+
+    bvp = eq.get_bvp();
 }
 
 void FEM::stiffness_display()
 {
     int size = mesh.n;
-    std::vector<std::vector<float>> bvp = eq.get_bvp();
 
     if(bvp[0][0] == 1)  {   size--; }
     if(bvp[1][0] == 1)  {   size--; }
@@ -40,7 +42,6 @@ void FEM::stiffness_display()
 void FEM::power_display()
 {
     int size = mesh.n;
-    std::vector<std::vector<float>> bvp = eq.get_bvp();
 
     if(bvp[0][0] == 1)  {   size--; }
     if(bvp[1][0] == 1)  {   size--; }
@@ -52,3 +53,4 @@ void FEM::power_display()
         std::cout << F[i] << std::endl;
     }
 }
+
